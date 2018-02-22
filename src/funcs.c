@@ -403,6 +403,13 @@ file_buffer(struct magic_set *ms, int fd, struct stat *st,
 		}
 	}
 
+	/* Check if we have a cpu microcode file */
+	m = file_is_ucode(ms, &b);
+	if (m) {
+		if (checkdone(ms, &rv))
+			goto done;
+	}
+
 	/* Check if we have a CDF file */
 	if ((ms->flags & MAGIC_NO_CHECK_CDF) == 0) {
 		m = file_trycdf(ms, &b);

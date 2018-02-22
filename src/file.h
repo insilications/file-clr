@@ -530,6 +530,7 @@ protected int file_encoding(struct magic_set *, const struct buffer *,
 protected int file_is_json(struct magic_set *, const struct buffer *);
 protected int file_is_csv(struct magic_set *, const struct buffer *, int);
 protected int file_is_tar(struct magic_set *, const struct buffer *);
+protected int file_is_ucode(struct magic_set *, const struct buffer *);
 protected int file_softmagic(struct magic_set *, const struct buffer *,
     uint16_t *, uint16_t *, int, int);
 protected int file_apprentice(struct magic_set *, const char *, int);
